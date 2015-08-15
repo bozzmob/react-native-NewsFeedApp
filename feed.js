@@ -4,6 +4,7 @@
 var React = require('react-native');
 
 var LikeBtn = require('./LikeBtn');
+var InnerPage = require('./InnerPage');
 
 var {
   AppRegistry,
@@ -20,30 +21,6 @@ var {
 } = React;
 
 var REQUEST_URL = 'https://www.prettylittlething.com/blog/?json_route=/posts&filter[posts_per_page]=20';
-
-
-var InnerPage = React.createClass({
-
- openLink: function(event) {
-    LinkingIOS.openURL('https://www.google.co.uk/')
- },
-
-  render: function() {
-    return (
-      <ScrollView style={[styles.inner, {backgroundColor: '#fff'}]}>
-        <Image
-          source={{uri: this.props.item.featured_image.guid}}
-          style={styles.thumbnail}
-        />
-        <TouchableHighlight onPress={this.openLink}>
-          <Text>Open link</Text>
-        </TouchableHighlight>
-        <Text style={styles.title}>{this.props.item.title}</Text>
-        <Text style={styles.excerpt}>{this.props.item.excerpt}</Text>
-      </ScrollView>
-      );
-  }
-});
 
 
 var HomeScene = React.createClass({
