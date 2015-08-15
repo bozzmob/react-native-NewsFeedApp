@@ -30,64 +30,28 @@ var {
   View,
 } = React;
 
-var PostCell = require('./PostCell');
-var PostView = require('./PostView');
-
-var MyView = React.createClass({
-  getInitialState: function() {
-    return {
-      dataSource: new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2}),
-      loaded: false,
-    };
-  },
-
-  componentDidMount: function() {
-    this.fetchData();
-  },
-
-  fetchData: function() {
-   fetch('https://www.prettylittlething.com/blog/?json_route=/posts&filter%5Bposts_per_page%5D=35')
-   .then((response) => response.json())
-   .then((responseData) => {
-    this.setState({
-     dataSource: this.state.dataSource.cloneWithRows(responseData),
-     loaded: true,
-   });
-  })
-   .done();
-  },
-
-  renderPostCell: function(post){
-    return(
-      <PostCell
-        onSelect={() => this.selectPost(post)}
-        post={post}/>
-    );
-  },
-
-  selectPost: function(post){
-    this.props.navigator.push({
-      title: post.title,
-      component: PostView,
-      backButtonTitle: 'Custom Back',
-      passProps: {post: post,
-                  post_id: post.ID,
-                  post_content: post.content,
-                  post_title: post.title,
-                  post_src: post.featured_image.guid,
-                }
-    });
-  },
-
+var PostView = React.createClass({
   render: function() {
-   return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderPostCell}
-        style={styles.postsListView}/>
+    return (
+      <ScrollView style={styles.container}>
+             <Text style={styles.posttitle}>
+            {this.props.post.title}
+          </Text>
+             <Image
+           source={{uri: this.props.post_src}}
+           style={styles.innerimage}
+            />
+          <Text style={styles.title}>
+            {this.props.post_id}
+          </Text>
+          <Text style={styles.title}>
+            {this.props.post_content}
+          </Text>
+      </ScrollView>
     );
-  },
+  }
 });
+
 
 
 var styles = StyleSheet.create({
@@ -136,4 +100,4 @@ var styles = StyleSheet.create({
     }
 });
 
-module.exports = MyView;
+module.exports = PostView;

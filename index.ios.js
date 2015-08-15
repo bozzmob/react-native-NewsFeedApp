@@ -12,20 +12,10 @@ var {
   StyleSheet
 } = React;
 
-var myPage = React.createClass({
-  render: function () {
-    return (
-      <View style={styles.myPage}>
-        <Text>Hello</Text>
-        <Text>World</Text>
-      </View>
-    )
-  }
-})
 
 var pltApp = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       selectedTab: 'TabOne',
       notifCount: 0,
@@ -33,12 +23,11 @@ var pltApp = React.createClass({
     };
   },
 
-
   render: function() {
     return (
        <TabBarIOS>
-        <TabBarIOS.Item 
-        title="Styles" 
+        <TabBarIOS.Item
+        title="Styles"
         systemIcon="search"
       selected={this.state.selectedTab === 'TabOne'}
       onPress={() => {
