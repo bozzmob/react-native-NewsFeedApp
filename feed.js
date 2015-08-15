@@ -14,6 +14,7 @@ var {
   ScrollView,
   NavigatorIOS,
   TouchableHighlight,
+  ActivityIndicatorIOS,
   TouchableOpacity,
   LinkingIOS,
   Image,
@@ -31,6 +32,7 @@ var HomeScene = React.createClass({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
       loaded: false,
+      animating: true,
       posts: 30,
     };
   },
@@ -51,8 +53,6 @@ var HomeScene = React.createClass({
     })
     .done();
   },
-
-
 
   onPress() {
     this.props.navigator.push({
@@ -82,15 +82,11 @@ var HomeScene = React.createClass({
   renderLoadingView: function() {
     return (
       <View style={styles.containerloading}>
-       <Text style={styles.loading}>
-        loading ....
-      </Text>
-       <Text style={styles.loading}>
-        loading ....
-      </Text>
-       <Text style={styles.loading}>
-        loading ....
-      </Text>
+          <ActivityIndicatorIOS
+            animating={this.state.animating}
+            style={[styles.centering, {height: 80}]}
+            size="large"
+          />
       </View>
     );
   },
@@ -172,7 +168,10 @@ var styles = StyleSheet.create({
     marginTop: 30,
     textAlign: 'center',
   },
-
+  centering: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   containerloading: {
     flex: 1,
     flexDirection: 'column',
