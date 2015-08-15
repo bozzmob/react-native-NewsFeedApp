@@ -140,22 +140,6 @@ var ItemCell = React.createClass({
   }
 });
 
-/*
-
-var pltApp = React.createClass({
-
-  render: function() {
-    return (
-      <NavigatorIOS ref="nav" style={styles.container} initialRoute={{
-        component: HomeScene,
-        title: 'Prettylittlething',
-      }} />
-    );
-  }
-
-});
-
-*/
 
 var styles = StyleSheet.create({
   container: {
