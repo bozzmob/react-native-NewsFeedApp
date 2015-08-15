@@ -1,7 +1,8 @@
-
 'use strict';
 
 var React = require('react-native');
+
+var LikeBtn = require('./LikeBtn');
 
 var {
   AppRegistry,

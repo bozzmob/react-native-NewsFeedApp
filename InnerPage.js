@@ -3,9 +3,6 @@
 
 var React = require('react-native');
 
-//var LikeBtn = require('./LikeBtn');
-
-
 var {
   AppRegistry,
   StyleSheet,
@@ -24,7 +21,7 @@ var {
 var InnerPage = React.createClass({
 
  openLink: function(event) {
-    LinkingIOS.openURL('https://www.google.co.uk/')
+    LinkingIOS.openURL('https://www.example.com/')
  },
 
   render: function() {

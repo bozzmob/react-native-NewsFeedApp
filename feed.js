@@ -3,8 +3,9 @@
 
 var React = require('react-native');
 
-var LikeBtn = require('./LikeBtn');
+
 var InnerPage = require('./InnerPage');
+var ItemCell = require('./ItemCell');
 
 var {
   AppRegistry,
@@ -111,33 +112,6 @@ var HomeScene = React.createClass({
     );
   },
 
-});
-
-
-
-var ItemCell = React.createClass({
-
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <View>
-          <TouchableOpacity onPress={this.props.onSelect}>
-          <Image
-            source={{uri: this.props.item.featured_image.guid}}
-            style={styles.thumbnail}
-          />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.rightContainer}>
-          <Text style={styles.title}>{this.props.item.title}</Text>
-          <TouchableHighlight onPress={this.props.onSelect}>
-            <Text style={styles.more}>more</Text>
-          </TouchableHighlight>
-        </View>
-        <LikeBtn/>
-      </View>
-      );
-  }
 });
 
 
