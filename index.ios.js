@@ -1,7 +1,10 @@
 'use strict';
 
 var React = require('react-native');
+
 var HomeScene = require('./feed');
+
+
 
 var {
   AppRegistry,

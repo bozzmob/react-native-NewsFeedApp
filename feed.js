@@ -3,6 +3,8 @@
 
 var React = require('react-native');
 
+var LikeBtn = require('./LikeBtn');
+
 var {
   AppRegistry,
   StyleSheet,
@@ -18,37 +20,6 @@ var {
 } = React;
 
 var REQUEST_URL = 'https://www.prettylittlething.com/blog/?json_route=/posts&filter[posts_per_page]=20';
-
-
-
-var LikeBtn = React.createClass({
-
-  getInitialState: function() {
-    return {
-      liked: false,
-    };
-  },
-
- handleClick: function(event) {
-  this.setState({liked: !this.state.liked});
- },
- 
- render: function() {
-  var icon = this.state.liked ? require('image!my-icon-active') : require('image!my-icon-inactive');
-  // var text = this.state.liked ? 'liked <3' : 'like this';
-   return (
-      <View>
-        <TouchableOpacity onPress={this.handleClick}>
-           <Image source={icon} />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-
-
-});
-
 
 
 var InnerPage = React.createClass({
@@ -224,7 +195,7 @@ var styles = StyleSheet.create({
     marginTop: 30,
     textAlign: 'center',
   },
-  
+
   containerloading: {
     flex: 1,
     flexDirection: 'column',
