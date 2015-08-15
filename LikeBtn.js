@@ -36,7 +36,7 @@ var LikeBtn = React.createClass({
    return (
       <View>
         <TouchableOpacity onPress={this.handleClick}>
-           <Image source={icon} />
+           <Image source={icon} style={styles.heart}/>
         </TouchableOpacity>
       </View>
     );
@@ -57,37 +57,9 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  containerloading: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#Fff',
-  },
-  excerpt: {
-    fontSize: 20,
-    marginBottom: 30,
-    textAlign: 'center',
-  },
-  scene: {
-    padding: 10,
-    paddingTop: 74,
-    flex: 1
-  },
-  more: {
-    fontSize: 20,
-    textAlign: 'right',
-  },
-  inner: {
-    padding: 10,
-    flex: 1
-  },
-  loading: {
-    fontSize: 20,
-  },
-  thumbnail: {
-    width: 300,
-    height: 300,
+  heart: {
+    width: 20,
+    height: 20,
   },
 });
 

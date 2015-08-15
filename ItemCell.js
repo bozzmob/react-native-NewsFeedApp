@@ -52,7 +52,7 @@ var styles = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
     marginBottom: 40,
     marginTop: 30,
     textAlign: 'center',
@@ -90,8 +90,8 @@ var styles = StyleSheet.create({
     fontSize: 20,
   },
   thumbnail: {
-    width: 300,
     height: 300,
+    resizeMode: 'cover'
   },
 });
 

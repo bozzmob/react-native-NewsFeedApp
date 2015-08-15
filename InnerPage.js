@@ -83,8 +83,8 @@ var styles = StyleSheet.create({
     fontSize: 20,
   },
   thumbnail: {
-    width: 300,
     height: 300,
+    resizeMode: 'cover'
   },
 });
 
