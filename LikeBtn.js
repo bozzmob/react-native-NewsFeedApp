@@ -52,8 +52,8 @@ var styles = StyleSheet.create({
         backgroundColor: 'blue'
    },
   heart: {
-    width: 20,
-    height: 20,
+    width: 15,
+    height: 15,
   }
 });
 

@@ -45,10 +45,9 @@ var InnerPage = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    //padding: 10,
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
     marginBottom: 40,
     marginTop: 30,
     textAlign: 'center',

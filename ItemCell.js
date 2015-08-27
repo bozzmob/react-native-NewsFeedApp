@@ -55,7 +55,7 @@ var ItemCell = React.createClass({
 var styles = StyleSheet.create({
   item_cell: {
     flex: 1,
-    marginBottom: 50,
+    marginBottom: 55,
     borderTopColor: '#eee',
     borderTopWidth: 1,
   },
@@ -73,7 +73,7 @@ var styles = StyleSheet.create({
     marginTop: 20,
   },
   title: {
-    fontSize: 13,
+    fontSize: 16,
     marginBottom: 20,
     marginTop: 30,
     textAlign: 'right',
@@ -90,13 +90,14 @@ var styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     padding: 10,
+    marginTop: 20,
   },
   view_more: {
     width:100,
   },
   view_more_text: {
     textAlign: 'right',
-
+    fontSize: 10,
   },
   like_btn: {
       alignSelf: 'flex-start',
