@@ -11,7 +11,6 @@ var {
   View,
   ScrollView,
   NavigatorIOS,
-  TouchableHighlight,
   ActivityIndicatorIOS,
   TouchableOpacity,
   LinkingIOS,
@@ -35,11 +34,12 @@ var ItemCell = React.createClass({
           </TouchableOpacity>
         </View>
         <View style={styles.item_cell_ctrls}>
-          <TouchableHighlight style={styles.view_more} onPress={this.props.onSelect}>
-            <Text style={styles.more}>View More</Text>
-          </TouchableHighlight>
+          <LikeBtn style={styles.like_btn}/>
+          <TouchableOpacity style={styles.view_more} onPress={this.props.onSelect}>
+            <Text style={styles.view_more_text}>VIEW MORE</Text>
+          </TouchableOpacity>
         </View>
-        <LikeBtn/>
+
       </View>
       );
   }
@@ -64,18 +64,22 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
   },
   item_cell_ctrls: {
-    //backgroundColor: 'red',
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    padding: 10,
   },
   view_more: {
     width:100,
-    backgroundColor:'yellow'
   },
-  more: {
-    fontSize: 10,
+  view_more_text: {
     textAlign: 'right',
+
   },
-  loading: {
-    fontSize: 20,
+  like_btn: {
+      alignSelf: 'flex-start',
+      width: 150,
   },
   thumbnail_img: {
     height: 300,
