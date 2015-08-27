@@ -36,7 +36,7 @@ var ItemCell = React.createClass({
         <View style={styles.rightContainer}>
           <Text style={styles.title}>{this.props.item.title}</Text>
           <TouchableHighlight onPress={this.props.onSelect}>
-            <Text style={styles.more}>more</Text>
+            <Text style={styles.more}>View More</Text>
           </TouchableHighlight>
         </View>
         <LikeBtn/>
@@ -79,7 +79,7 @@ var styles = StyleSheet.create({
     flex: 1
   },
   more: {
-    fontSize: 20,
+    fontSize: 10,
     textAlign: 'right',
   },
   inner: {
