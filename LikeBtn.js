@@ -35,7 +35,7 @@ var LikeBtn = React.createClass({
   // var text = this.state.liked ? 'liked <3' : 'like this';
    return (
       <View>
-        <TouchableOpacity onPress={this.handleClick}>
+        <TouchableOpacity style={styles.likeBtn} onPress={this.handleClick}>
            <Image source={icon} style={styles.heart}/>
         </TouchableOpacity>
       </View>
@@ -46,21 +46,15 @@ var LikeBtn = React.createClass({
 
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-  },
-  title: {
-    fontSize: 30,
-    marginBottom: 40,
-    marginTop: 30,
-    textAlign: 'center',
-  },
-
+  likeBtn: {
+        width:100,
+        height: 100,
+        backgroundColor: 'blue'
+   },
   heart: {
     width: 20,
     height: 20,
-  },
+  }
 });
 
 

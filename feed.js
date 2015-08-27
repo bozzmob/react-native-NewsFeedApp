@@ -141,19 +141,6 @@ var styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: 'center',
   },
-  scene: {
-    padding: 10,
-    paddingTop: 74,
-    flex: 1
-  },
-  more: {
-    fontSize: 20,
-    textAlign: 'right',
-  },
-  inner: {
-    padding: 10,
-    flex: 1
-  },
   loading: {
     fontSize: 20,
   },

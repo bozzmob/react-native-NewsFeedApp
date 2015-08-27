@@ -24,18 +24,18 @@ var ItemCell = React.createClass({
 
   render: function() {
     return (
-      <View style={styles.container}>
+      <View style={styles.item_cell}>
         <View>
+          <Text style={styles.title}>{this.props.item.title}</Text>
           <TouchableOpacity onPress={this.props.onSelect}>
           <Image
             source={{uri: this.props.item.featured_image.guid}}
-            style={styles.thumbnail}
+            style={styles.thumbnail_img}
           />
           </TouchableOpacity>
         </View>
-        <View style={styles.rightContainer}>
-          <Text style={styles.title}>{this.props.item.title}</Text>
-          <TouchableHighlight onPress={this.props.onSelect}>
+        <View style={styles.item_cell_ctrls}>
+          <TouchableHighlight style={styles.view_more} onPress={this.props.onSelect}>
             <Text style={styles.more}>View More</Text>
           </TouchableHighlight>
         </View>
@@ -47,13 +47,15 @@ var ItemCell = React.createClass({
 
 
 var styles = StyleSheet.create({
-  container: {
+  item_cell: {
     flex: 1,
-    padding: 10,
+    marginBottom: 50,
+    borderTopColor: '#eee',
+    borderTopWidth: 1,
   },
   title: {
-    fontSize: 20,
-    marginBottom: 40,
+    fontSize: 16,
+    marginBottom: 20,
     marginTop: 30,
     textAlign: 'center',
   },
@@ -61,35 +63,21 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  containerloading: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#Fff',
+  item_cell_ctrls: {
+    //backgroundColor: 'red',
   },
-  excerpt: {
-    fontSize: 20,
-    marginBottom: 30,
-    textAlign: 'center',
-  },
-  scene: {
-    padding: 10,
-    paddingTop: 74,
-    flex: 1
+  view_more: {
+    width:100,
+    backgroundColor:'yellow'
   },
   more: {
     fontSize: 10,
     textAlign: 'right',
   },
-  inner: {
-    padding: 10,
-    flex: 1
-  },
   loading: {
     fontSize: 20,
   },
-  thumbnail: {
+  thumbnail_img: {
     height: 300,
     resizeMode: 'cover'
   },
