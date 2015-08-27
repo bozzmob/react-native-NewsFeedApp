@@ -30,15 +30,19 @@ var pltApp = React.createClass({
     return (
        <TabBarIOS>
         <TabBarIOS.Item
-        title="Styles"
-        systemIcon="search"
-      selected={this.state.selectedTab === 'TabOne'}
-      onPress={() => {
-        this.setState({
-          selectedTab: 'TabOne',
-        });
-          }}>
-          <NavigatorIOS style={styles.nav} initialRoute={{ title: 'Prettylittlething', component: HomeScene }} />
+            title="Styles"
+            systemIcon="search"
+            selected={this.state.selectedTab === 'TabOne'}
+            onPress={() => {
+                this.setState({
+                    selectedTab: 'TabOne',
+                });
+        }}>
+          <NavigatorIOS style={styles.nav}
+              initialRoute={{
+                  title: 'Prettylittlething',
+                  component: HomeScene }}
+          />
         </TabBarIOS.Item>
         <TabBarIOS.Item
           title="Tab Two"
@@ -50,12 +54,8 @@ var pltApp = React.createClass({
             });
           }}>
           <View>
-        <Text style={styles.content}>My favorites</Text>
-        <Text style={styles.content}>My favorites</Text>
-        <Text style={styles.content}>My favorites</Text>
-        <Text style={styles.content}>My favorites</Text>
-        <Text style={styles.content}>My favorites</Text>
-        </View>
+              <Text style={styles.content}>My favorites</Text>
+          </View>
         </TabBarIOS.Item>
       </TabBarIOS>
     );
