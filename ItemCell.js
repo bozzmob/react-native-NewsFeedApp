@@ -24,21 +24,27 @@ var ItemCell = React.createClass({
   render: function() {
     return (
       <View style={styles.item_cell}>
-        <View>
-          <Text style={styles.title}>{this.props.item.title}</Text>
+          <View style={styles.cell_header}>
+              <Image
+                source={{uri: 'http://images.sodahead.com/polls/000787789/polls_2275601881_271b7d5517_5040_965111_answer_3_xlarge.jpeg'}}
+                style={styles.user_thumb}
+              />
+              <Text style={styles.title}>{this.props.item.title}</Text>
+          </View>
+
           <TouchableOpacity onPress={this.props.onSelect}>
-          <Image
-            source={{uri: this.props.item.featured_image.guid}}
-            style={styles.thumbnail_img}
-          />
+              <Image
+                source={{uri: this.props.item.featured_image.guid}}
+                style={styles.thumbnail_img}
+              />
           </TouchableOpacity>
-        </View>
-        <View style={styles.item_cell_ctrls}>
-          <LikeBtn style={styles.like_btn}/>
-          <TouchableOpacity style={styles.view_more} onPress={this.props.onSelect}>
-            <Text style={styles.view_more_text}>VIEW MORE</Text>
-          </TouchableOpacity>
-        </View>
+
+          <View style={styles.item_cell_ctrls}>
+              <LikeBtn style={styles.like_btn}/>
+              <TouchableOpacity style={styles.view_more} onPress={this.props.onSelect}>
+                  <Text style={styles.view_more_text}>VIEW MORE</Text>
+              </TouchableOpacity>
+          </View>
 
       </View>
       );
@@ -53,11 +59,26 @@ var styles = StyleSheet.create({
     borderTopColor: '#eee',
     borderTopWidth: 1,
   },
+  cell_header: {
+      padding: 10,
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+  },
+  user_thumb: {
+    width:40,
+    height: 40,
+    borderRadius: 20,
+    alignSelf: 'flex-start',
+    marginTop: 20,
+  },
   title: {
-    fontSize: 16,
+    fontSize: 13,
     marginBottom: 20,
     marginTop: 30,
-    textAlign: 'center',
+    textAlign: 'right',
+    width:300,
+    alignSelf: 'flex-start',
   },
   centering: {
     alignItems: 'center',

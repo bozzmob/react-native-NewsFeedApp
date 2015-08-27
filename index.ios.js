@@ -40,7 +40,7 @@ var pltApp = React.createClass({
         }}>
           <NavigatorIOS style={styles.nav}
               initialRoute={{
-                  title: 'Prettylittlething',
+                  title: 'News Feed App',
                   component: HomeScene }}
           />
         </TabBarIOS.Item>
