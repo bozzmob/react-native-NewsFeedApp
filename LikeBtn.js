@@ -31,8 +31,7 @@ var LikeBtn = React.createClass({
  },
 
  render: function() {
-  var icon = this.state.liked ? require('image!my-icon-active') : require('image!my-icon-inactive');
-  // var text = this.state.liked ? 'liked <3' : 'like this';
+   var icon = this.state.liked ? require('image!my-icon-active') : require('image!my-icon-inactive');
    return (
       <View>
         <TouchableOpacity style={styles.likeBtn} onPress={this.handleClick}>
@@ -41,7 +40,6 @@ var LikeBtn = React.createClass({
       </View>
     );
   }
-
 });
 
 

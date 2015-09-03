@@ -1,10 +1,6 @@
 'use strict';
-
 var React = require('react-native');
-
 var HomeScene = require('./feed');
-
-
 
 var {
   AppRegistry,
@@ -14,7 +10,6 @@ var {
   Text,
   StyleSheet
 } = React;
-
 
 var pltApp = React.createClass({
 
@@ -72,6 +67,5 @@ var styles = StyleSheet.create({
     paddingTop: 64
   }
 });
-
 
 AppRegistry.registerComponent('pltApp', () => pltApp);

@@ -32,7 +32,7 @@ var InnerPage = React.createClass({
           style={styles.thumbnail}
         />
         <TouchableHighlight onPress={this.openLink}>
-          <Text>Open link</Text>
+          <Text style={styles.open_link}>Open link</Text>
         </TouchableHighlight>
         <Text style={styles.title}>{this.props.item.title}</Text>
         <Text style={styles.excerpt}>{this.props.item.excerpt}</Text>
@@ -60,10 +60,17 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#Fff',
   },
+  open_link: {
+     textAlign: 'right',
+     paddingRight: 10,
+     paddingTop: 10, 
+  },
   excerpt: {
     fontSize: 20,
     marginBottom: 30,
     textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   more: {
     fontSize: 20,

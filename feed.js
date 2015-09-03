@@ -114,7 +114,6 @@ var HomeScene = React.createClass({
 
 });
 
-
 var styles = StyleSheet.create({
   container: {
     flex: 1,
